@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fillWidth="true" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skomorokhin.cloudClient.controllers.MainClientController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem fx:id="dirServer" mnemonicParsing="false" onAction="#openServerDirWindow" text="Server" />
+                        <MenuItem fx:id="dirClient" mnemonicParsing="false" onAction="#openClientDirWindow" text="Client" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+                <Insets left="10.0" right="10.0" top="10.0" />
+            </VBox.margin>
+            <children>
+                <VBox alignment="TOP_CENTER" style="-fx-border-color: black; -fx-background-color: silver;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Client" textAlignment="CENTER">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Text>
+                        <TreeView fx:id="clientTreeView" styleClass="treeView" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <InnerShadow />
+                            </effect>
+                        </TreeView>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Button fx:id="toServer" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#pushButtonToServer" style="-fx-background-color: transparent;" styleClass="serverButton" textAlignment="JUSTIFY">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/toServer.png" />
+                                    </image>
+                                    <effect>
+                                        <DropShadow />
+                                    </effect>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button fx:id="fromServer" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#pushButtonFromServer" pickOnBounds="false" style="-fx-background-color: transparent;" styleClass="serverButton" textAlignment="CENTER">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/fromServer.png" />
+                                    </image>
+                                    <effect>
+                                        <DropShadow />
+                                    </effect>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" style="-fx-border-color: black; -fx-background-color: silver;" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Server" textAlignment="CENTER">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Text>
+                        <TreeView fx:id="serverTreeView" styleClass="treeView" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <InnerShadow />
+                            </effect>
+                        </TreeView>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="5.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

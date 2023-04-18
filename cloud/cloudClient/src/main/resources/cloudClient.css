@@ -1,0 +1,35 @@
+.root
+{
+    -fx-background-color: DimGrey;
+}
+
+
+.serverButton:hover{
+    -fx-opacity: 0.4;
+}
+
+
+.serverButton:pressed {
+    -fx-opacity: 0.8;
+}
+
+
+.treeView {
+    -fx-font-size: 11;
+
+}
+
+.treeView .tree-cell {
+    -fx-background-color: rgb(250,240,230);
+}
+
+.treeView .tree-cell:selected {
+    -fx-background-color: green;
+}
+
+
+
+
+
+
+
