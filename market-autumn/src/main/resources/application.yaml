@@ -1,0 +1,16 @@
+server:
+  port: 8189
+  servlet:
+    context-path: /app
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/market-autumn
+    username: postgres
+    password: admin
+  jpa:
+    generate-ddl: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: none

@@ -1,0 +1,26 @@
+<h3>Корзина</h3>
+
+    <table class="table table-hover" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>Имя продукта</td>
+            <td>Стоимость</td>
+            <td>Кол-во</td>
+            <td>Общ.стоимость</td>
+        </tr>
+
+        <tbody>
+        <tr ng-repeat="cp in cartProductList">
+            <td>{{cp.productDto.title}}</td>
+            <td>{{cp.productDto.price}}</td>
+            <td>{{cp.quantity}}</td>
+            <td>{{cp.productDto.price * cp.quantity}}</td>
+            <td>
+                <button delFromCart id = "{{cp.id}}">
+                    удалить
+                </button>
+            </td>
+        </tbody>
+
+    </table>
+ <span> Итого = {{totalPrice}} </span>
+<button createorder style="float: left" > оформить заказ</button>

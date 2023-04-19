@@ -1,0 +1,21 @@
+<h3>Заказ</h3>
+
+<table class="table table-hover" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>Поз.</td>
+        <td>Имя продукта</td>
+        <td>Стоимость</td>
+        <td>Кол-во</td>
+        <td>Общ.стоимость</td>
+    </tr>
+
+    <tbody>
+    <tr ng-repeat="p in selectedOrder">
+        <td>{{p.id}}</td>
+        <td>{{p.productDto.title}}</td>
+        <td>{{p.productDto.price}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.productDto.price * p.quantity}}</td>
+    </tbody>
+</table>
+<span> Итого = {{totalPrice}}  </span>

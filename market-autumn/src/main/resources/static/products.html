@@ -1,0 +1,32 @@
+<h1 class="mainTitle">Список товаров</h1>
+
+<form class="filterForm" ng-submit="loadProducts()" method="get">
+  <label>MinPrice</label>
+  <input type="number" ng-model="filter.min_price" placeholder="from_price" required>
+  <label>MaxPrice</label>
+  <input type="number" ng-model="filter.max_price" placeholder="to_price" required>
+  <button class="btn btn-primary" type="submit">filter</button>
+</form>
+
+<table class="productsTable">
+  <tr>
+    <td>ID</td>
+    <td>Имя продукта</td>
+    <td>Стоимость</td>
+  </tr>
+  <tbody>
+  <tr ng-repeat="p in productsList">
+    <td>{{p.id}}</td>
+    <td>{{p.title}}</td>
+    <td>{{p.price}}</td>
+    <td ng-show="isUserLoggedIn()">
+      <button putToCart product="{{p.id}}">в корзину</button>
+    </td>
+  </tbody>
+</table>
+
+<ul>
+  <li style="display: inline" ng-repeat="p in pages">
+    <a href="" ng-click="loadProducts(p)">{{p}}</a>
+  </li>
+</ul>
