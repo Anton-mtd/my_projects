@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="204.0" prefWidth="203.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.skomorokhin.timerpcapp.TimerController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="hh" focusTraversable="false" onKeyTyped="#checkInputTextField" promptText="HH" />
+                  <TextField fx:id="mm" focusTraversable="false" onKeyTyped="#checkInputTextField" promptText="MM" />
+                  <TextField fx:id="ss" focusTraversable="false" onKeyTyped="#checkInputTextField" promptText="SS" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+
+            <ComboBox fx:id="comboBoxAction" onHiding="#enableDisableStartButton" prefWidth="150.0" promptText="Выбирите действие:" />
+            <Label fx:id="timerLabel" text="Label">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="startButton" disable="true" mnemonicParsing="false" onAction="#startTimer" text="Start">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#resetTimer" text="Cancel" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
